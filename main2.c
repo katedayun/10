@@ -6,22 +6,22 @@
 
 int main(int argc, char *argv[]) {
 	FILE* fp;
-	int i;
-	char str[100];
-	//for repetition
-	for(i=0;i<3;i++){
-	
-	//1. open file
-		fp=fopen("sample.txt","w");
-	//2. write file
-	//2-1. print"input a word"
-		printf("input a word:");
-	//2-2. scanf a string
-		scanf("%s\n",str);
-	//2-3. fprintf()
-		fprintf(fp,"%s",str);
+	char c;
+	fp = fopen("sample.txt","r");
+	if (fp==NULL){
+		printf("failed to open\n");
+		return 0;
 	}
-	fclose(fp);	
+	
+	while ((c=fgetc(fp))!=EOF)
+	//if the word is not the EOF //input and compare simultaneously, get char???? != '\0'
+	{
+		putchar(c);
+		
+		
+		//printout with one letter 
+	}
+	fclose(fp);
 	
 	return 0;
 }
